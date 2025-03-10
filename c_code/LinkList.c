@@ -199,5 +199,7 @@ void ListTraverse(LinkList L)
 int main()
 {
     LinkList L = InitList();
+    ListTraverse(L);
+    DestoryList(L);
     return 0;
 }
