@@ -10,48 +10,60 @@ typedef struct LNode
 {
     ElemType data;
     struct LNode *next;
-} LNode, *LinkList;
+} LNode, *Node, *Link;
+typedef struct
+{
+    Link head, tail;
+    int len;
+} LinkList;
 LinkList InitList()
 {
-    LinkList L = (LinkList)malloc(sizeof(LNode));
-    L->next = NULL;
-    LinkList tail = L;
+    LinkList L;
+    L.head = (Link)malloc(sizeof(LNode));
+    if (!L.head)
+    {
+        exit(0);
+    }
+    L.head->next = NULL;
+    L.tail = L.head;
+    L.len = 0;
     int data;
     scanf("%d", &data);
     while (data != -1)
     {
-        LinkList p = (LinkList)malloc(sizeof(LNode));
+        Node p = (Node)malloc(sizeof(LNode));
         p->data = data;
         p->next = NULL;
-        tail->next = p;
-        tail = p;
+        L.tail->next = p;
+        L.tail = p;
+        L.len++;
         scanf("%d", &data);
     }
     return L;
 }
 void DestoryList(LinkList L)
 {
-    LinkList p = L;
-    while (L)
+    Node p = L.head;
+    while (p)
     {
-        L = L->next;
+        L.head = L.head->next;
         free(p);
-        p = L;
+        p = L.head;
     }
 }
 void ClearList(LinkList L)
 {
-    LinkList p = L->next;
+    Node p = L.head->next;
     while (p)
     {
-        L->next = p->next;
+        L.head->next = p->next;
         free(p);
-        p = L->next;
+        p = L.head->next;
     }
 }
 Status ListEmpty(LinkList L)
 {
-    if (L->next)
+    if (L.head->next)
     {
         return ERROR;
     }
@@ -62,19 +74,12 @@ Status ListEmpty(LinkList L)
 }
 int ListLength(LinkList L)
 {
-    int i = 0;
-    LinkList p = L;
-    while (p)
-    {
-        i++;
-        p = p->next;
-    }
-    return i;
+    return L.len;
 }
 Status GetElem(LinkList L, int i, ElemType *e)
 {
     int j = 0;
-    LinkList p = L;
+    Node p = L.head;
     while (j < i && p)
     {
         j++;
@@ -89,8 +94,12 @@ Status GetElem(LinkList L, int i, ElemType *e)
 }
 int LocateElem(LinkList L, ElemType e)
 {
+    if(L.len==0)
+    {
+        return 0;
+    }
     int i = 0;
-    LinkList p = L;
+    Node p = L.head;
     while (p)
     {
         i++;
@@ -104,7 +113,7 @@ int LocateElem(LinkList L, ElemType e)
 }
 Status PriorElem(LinkList L, ElemType cur_e, ElemType *pre_e)
 {
-    LinkList p = L, q = NULL;
+    Node p = L.head, q = NULL;
     if (p->next)
     {
         q = p->next;
@@ -116,12 +125,14 @@ Status PriorElem(LinkList L, ElemType cur_e, ElemType *pre_e)
             *pre_e = p->data;
             return OK;
         }
+        q = q->next;
+        p = p->next;
     }
     return ERROR;
 }
 Status NextElem(LinkList L, ElemType cur_e, ElemType *next_e)
 {
-    LinkList p = L, q = NULL;
+    Node p = L.head, q = NULL;
     if (p->next)
     {
         q = p->next;
@@ -133,6 +144,8 @@ Status NextElem(LinkList L, ElemType cur_e, ElemType *next_e)
             *next_e = q->data;
             return OK;
         }
+        q = q->next;
+        p = p->next;
     }
     return ERROR;
 }
@@ -142,14 +155,14 @@ Status ListInsert(LinkList L, int i, ElemType e)
     {
         return ERROR;
     }
-    LinkList p = L;
+    Node p = L.head;
     int j = 1;
     while (j < i && p)
     {
         p = p->next;
         j++;
     }
-    LinkList q = (LinkList)malloc(sizeof(LNode));
+    Node q = (Link)malloc(sizeof(LNode));
     q->data = e;
     q->next = p->next;
     p->next = q;
@@ -161,14 +174,14 @@ Status ListDelete(LinkList L, int i, ElemType *e)
     {
         return ERROR;
     }
-    LinkList p = L;
+    Node p = L.head;
     int j = 1;
     while (j < i && p)
     {
         p = p->next;
         j++;
     }
-    LinkList q = p->next;
+    Node q = p->next;
     p->next = q->next;
     *e = q->data;
     free(q);
@@ -176,7 +189,7 @@ Status ListDelete(LinkList L, int i, ElemType *e)
 }
 void ListTraverse(LinkList L)
 {
-    LinkList p = L->next;
+    Node p = L.head->next;
     while (p)
     {
         printf("%d ", p->data);
@@ -185,6 +198,6 @@ void ListTraverse(LinkList L)
 }
 int main()
 {
-    LinkList H = InitList();
+    LinkList L = InitList();
     return 0;
 }
