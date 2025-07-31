@@ -1,0 +1,3 @@
+Boss 0001 yan
+Staff 0002 zhangsan 01 -1
+Manager 0003 lisi 01 -1
