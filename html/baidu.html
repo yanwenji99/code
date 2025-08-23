@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度一下</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            font-family: Arial, sans-serif;
+        }
+
+        #logo {
+            margin-bottom: 20px;
+        }
+
+        #search-box {
+            width: 580px;
+            height: 40px;
+            padding: 5px 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        #search-box:focus {
+            border-color: #4e6ef2;
+        }
+
+        #search-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 14px;
+            background-color: #4e6ef2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #search-btn:hover {
+            background-color: #4662d9;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 百度Logo（建议替换为本地图片地址） -->
+    <img id="logo" src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度Logo" width="270">
+
+    <form action="https://www.baidu.com/s" method="GET" target="_blank">
+        <input type="text" id="search-box" name="wd" placeholder="请输入搜索内容" autofocus>
+        <button type="submit" id="search-btn">百度一下</button>
+    </form>
+</body>
+
+</html>

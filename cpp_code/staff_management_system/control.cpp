@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include"head.h"
 using namespace std;
 
 class Staff

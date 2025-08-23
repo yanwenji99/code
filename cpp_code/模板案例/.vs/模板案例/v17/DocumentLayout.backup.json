@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7DA3B87F-E756-46E0-90F8-1110BD293E16}|\u6A21\u677F\u6848\u4F8B.vcxproj|D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\\u6570\u7EC4\u7C7B\u6A21\u677F.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7DA3B87F-E756-46E0-90F8-1110BD293E16}|\u6A21\u677F\u6848\u4F8B.vcxproj|solutionrelative:\u6570\u7EC4\u7C7B\u6A21\u677F.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DA3B87F-E756-46E0-90F8-1110BD293E16}|\u6A21\u677F\u6848\u4F8B.vcxproj|D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\myArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7DA3B87F-E756-46E0-90F8-1110BD293E16}|\u6A21\u677F\u6848\u4F8B.vcxproj|solutionrelative:myArray.hpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "\u6570\u7EC4\u7C7B\u6A21\u677F.cpp",
+              "DocumentMoniker": "D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\\u6570\u7EC4\u7C7B\u6A21\u677F.cpp",
+              "RelativeDocumentMoniker": "\u6570\u7EC4\u7C7B\u6A21\u677F.cpp",
+              "ToolTip": "D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\\u6570\u7EC4\u7C7B\u6A21\u677F.cpp*",
+              "RelativeToolTip": "\u6570\u7EC4\u7C7B\u6A21\u677F.cpp*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAADEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-08-23T08:55:06.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "myArray.hpp",
+              "DocumentMoniker": "D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\myArray.hpp",
+              "RelativeDocumentMoniker": "myArray.hpp",
+              "ToolTip": "D:\\yan\\code\\cpp_code\\\u6A21\u677F\u6848\u4F8B\\myArray.hpp",
+              "RelativeToolTip": "myArray.hpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-08-23T07:23:51.694Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
