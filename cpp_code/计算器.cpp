@@ -27,7 +27,7 @@ class abstract_calculator
 {
 public:
     int m_num1, m_num2;
-    virtural int getresult()
+    virtual int getresult()
     {
         return 0;
     }
