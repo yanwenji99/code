@@ -163,7 +163,7 @@ void createEnemy()
 {
     // 随机生成敌机位置
     double x = rand() % (BGWEIGHT - enemyBGWEIGHT);
-    Enemy enemy(x, -enemyBGHEIGHT, 2.0);
+    Enemy enemy(x, -enemyBGHEIGHT, 2.0 + score * 0.01);
     enemyList.push_back(enemy);
 }
 
@@ -286,7 +286,7 @@ void move()
     auto currentTime = chrono::steady_clock::now();
     double timeSinceLastEnemy = chrono::duration<double>(currentTime - lastEnemyTime).count();
 
-    if (timeSinceLastEnemy >= enemyInterval)
+    if (timeSinceLastEnemy >= enemyInterval - score * 0.0009)
     {
         createEnemy();
         lastEnemyTime = currentTime;
@@ -330,7 +330,16 @@ void start()
         drawmap();           // 绘制画面
 
         Sleep(10);           // 控制游戏速度
+        if (score == 1000)
+        {
+            settextcolor(RED);
+            setbkcolor(RGB(135, 206, 250)); // 天蓝色背景
+            cleardevice(); // 用背景色清空屏幕
+            settextstyle(70, 50,_T("黑体"));
+            outtextxy(165, 300, "WIN");
+            getchar();
+            break;
+        }
     }
-
     closegraph();
 }
